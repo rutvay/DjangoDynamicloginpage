@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+<head>
+    <meta name="google-signin-client_id" content="562809280846-e41925ag5hs07msio0ssvlruk7v9ct3s.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+
+
+{% block body %}
+<h1> Welcome {{ data.fname }}  </h1>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+{% endblock %}
+
+
+    <script>
+        function onSignIn(entry){
+            console.log(entry);
+        };
+    </script>
+
+
+</html>

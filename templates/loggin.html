@@ -1,0 +1,79 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dena Bank</title>
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <meta name="google-signin-client_id" content="562809280846-e41925ag5hs07msio0ssvlruk7v9ct3s.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="static/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="static/savings.svg">
+		</div>
+		<div class="login-content">
+			<form method="POST">
+                {% csrf_token %}
+                <h3 class="title">Welcome to Dena Bank</h3>
+				<img src="static/finance.svg">
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Email</h5>
+           		   		<input type="email" class="input" name="email">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i">
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" name="password">
+            	   </div>
+            	</div>
+                <p>Dont have an account?</p>
+                <a href="signup">Sign up</a>
+            	<input type="submit" class="btn" value="Login">
+                <p align="center" style="color: red;">{{ error.mess }}</p>
+                <br>
+                <div class="g-signin2" data-width="300" data-height="50" data-longtitle="true" align="center">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/js/script.js"></script>
+{#    <script name="datadict">#}
+{#        function onSignIn(entry){#}
+{#            let param = entry.getBasicProfile();#}
+{#            console.log(param.getEmail());#}
+{#            const token = '{% csrf_token %}';#}
+{#            var formdata = new FormData();#}
+{#            formdata.append("name",param.getName());#}
+{#            formdata.append("csrfmiddlewaretoken", "{{ csrf_token }}")#}
+{#            $.ajax({#}
+{#                    // points to the url where your data will be posted#}
+{#                    url:'/login',#}
+{#                    // post for security reason#}
+{#                    type: "POST",#}
+{#                    // data that you will like to return#}
+{#                    data: formdata,#}
+{##}
+{#                    processData: false,#}
+{#                    contentType: false,#}
+{#                    // what to do when the call is success#}
+{#                });#}
+{#        };#}
+    </script>
+</body>
+</html>
